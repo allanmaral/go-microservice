@@ -17,7 +17,7 @@ func TestGetUserNoUserFound(t *testing.T) {
 		Code:       "NotFound",
 	}
 
-	usr, got := GetUser(input)
+	usr, got := UserDao.GetUser(input)
 
 	assert.Nil(t, usr)
 	assert.EqualValues(t, got, want)
@@ -27,7 +27,7 @@ func TestGetUserValidId(t *testing.T) {
 	var input uint64 = 123
 	want := &User{Id: 123, FirstName: "Allan", LastName: "Ribeiro", Email: "email@email.com"}
 
-	got, err := GetUser(input)
+	got, err := UserDao.GetUser(input)
 
 	assert.Nil(t, err)
 	assert.EqualValues(t, got, want)
