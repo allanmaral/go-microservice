@@ -10,7 +10,7 @@ import (
 )
 
 func GetUser(response http.ResponseWriter, request *http.Request) {
-	userId, err := strconv.ParseInt(request.URL.Query().Get("user_id"), 10, 64)
+	userId, err := strconv.ParseUint(request.URL.Query().Get("user_id"), 10, 64)
 	if err != nil {
 		apiErr := utils.ApplicationError{
 			Message:    "user_id must be a number",

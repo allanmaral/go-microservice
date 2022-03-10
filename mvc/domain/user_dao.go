@@ -8,12 +8,12 @@ import (
 )
 
 var (
-	users = map[int64]*User{
+	users = map[uint64]*User{
 		123: {Id: 123, FirstName: "Allan", LastName: "Ribeiro", Email: "email@email.com"},
 	}
 )
 
-func GetUser(userId int64) (*User, *utils.ApplicationError) {
+func GetUser(userId uint64) (*User, *utils.ApplicationError) {
 	if user := users[userId]; user != nil {
 		return user, nil
 	}
