@@ -12,7 +12,7 @@ var (
 	UserService userService
 )
 
-func GetUser(userId uint64) (*domain.User, *utils.ApplicationError) {
+func (u *userService) GetUser(userId uint64) (*domain.User, *utils.ApplicationError) {
 	user, err := domain.UserDao.GetUser(userId)
 	if err != nil {
 		return nil, err

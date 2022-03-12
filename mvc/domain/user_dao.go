@@ -2,7 +2,6 @@ package domain
 
 import (
 	"fmt"
-	"log"
 	"net/http"
 
 	"github.com/allanmaral/go-microservice/mvc/utils"
